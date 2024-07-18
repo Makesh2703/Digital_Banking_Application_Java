@@ -1,6 +1,10 @@
 package com.wecp.progressive.entity;
 
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -16,13 +20,10 @@ public class Customers {
     private String password;
     private String role;
 
-    public Customers(String name, String email, String username, String password, String role) {
-        this.name = name;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
+    @OneToMany
+    @JsonIgnore
+    private List<Accounts> accounts;
+
     public Customers(){
 
     }
@@ -61,6 +62,12 @@ public class Customers {
     }
     public void setRole(String role) {
         this.role = role;
+    }
+    public List<Accounts> getAccounts() {
+        return accounts;
+    }
+    public void setAccounts(List<Accounts> accounts) {
+        this.accounts = accounts;
     }
     
     

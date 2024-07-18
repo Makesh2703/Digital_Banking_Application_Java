@@ -22,10 +22,10 @@ public class AccountServiceImplJpa implements AccountService {
     }
 
     @Override
-    public List<Accounts> getAccountsByUser(int userId) throws SQLException {
+    public List<Accounts> getAccountsByUser(int customerId) throws SQLException {
         // TODO Auto-generated method stub
         // throw new UnsupportedOperationException("Unimplemented method 'getAccountsByUser'");
-        return accountRepository.getAccountByUser(userId);
+        return accountRepository.getAccountByUser(customerId);
     }
 
     @Override

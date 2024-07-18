@@ -15,7 +15,6 @@ public class CustomerServiceImplJpa implements CustomerService{
     private CustomerRepository customerRepository;
     
     //private List<Customers> customers = new List<>() {}
-        
     @Override
     public List<Customers> getAllCustomers() {
         // TODO Auto-generated method stub

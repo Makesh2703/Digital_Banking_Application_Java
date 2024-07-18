@@ -11,31 +11,45 @@ public class Accounts {
     private Integer customerId;
     private Double balance;
 
-    public Accounts(Integer customerId, Double balance) {
-        this.customerId = customerId;
-        this.balance = balance;
-    }
-    public Accounts(){
+    @ManyToOne
+    private Customers customers;
 
+    public Accounts(){
+        
     }
+
     public Integer getAccountId() {
         return accountId;
     }
+
     public void setAccountId(Integer accountId) {
         this.accountId = accountId;
     }
-    public Integer getCustomer_id() {
+
+    public Integer getCustomerId() {
         return customerId;
     }
-    public void setCustomer_id(Integer customerId) {
+
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
+
     public Double getBalance() {
         return balance;
     }
+
     public void setBalance(Double balance) {
         this.balance = balance;
     }
+
+    public Customers getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Customers customers) {
+        this.customers = customers;
+    }
+
     
 
 }

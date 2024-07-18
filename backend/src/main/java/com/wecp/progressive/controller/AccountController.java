@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/accounts")
+
 public class AccountController {
     @Autowired
     private AccountService accountService;
@@ -29,8 +30,8 @@ public class AccountController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Accounts>> getAccountsByUser(int userId) throws SQLException {
-        return new ResponseEntity<>(accountService.getAccountsByUser(userId), HttpStatus.OK);
+    public ResponseEntity<List<Accounts>> getAccountsByUser(int customerId) throws SQLException {
+        return new ResponseEntity<>(accountService.getAccountsByUser(customerId), HttpStatus.OK);
     }
 
     @PostMapping
