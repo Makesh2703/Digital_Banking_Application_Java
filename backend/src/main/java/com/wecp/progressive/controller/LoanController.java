@@ -1,30 +1,98 @@
+// package com.wecp.progressive.controller;
+
+// import com.wecp.progressive.entity.Loan;
+// import org.springframework.http.ResponseEntity;
+// import org.springframework.web.bind.annotation.*;
+
+// import java.util.List;
+
+// public class LoanController {
+
+//     public ResponseEntity<List<Loan>> getAllLoans() {
+//         return null;
+//     }
+
+//     public ResponseEntity<Loan> getLoanById(Long id) {
+//         return null;
+//     }
+
+//     public ResponseEntity<Loan> createLoan(Loan loan) {
+//         return null;
+//     }
+
+//     public ResponseEntity<Void> updateLoan(Long id, Loan loan) {
+//         return null;
+//     }
+
+//     public ResponseEntity<Void> deleteLoan(Long id) {
+//         return null;
+//     }
+// }
+
+
 package com.wecp.progressive.controller;
 
 import com.wecp.progressive.entity.Loan;
+import com.wecp.progressive.service.LoanService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/loans")
 public class LoanController {
+    private final LoanService loanService;
 
+    @Autowired
+    public LoanController(LoanService loanService) {
+        this.loanService = loanService;
+    }
+
+    @GetMapping
     public ResponseEntity<List<Loan>> getAllLoans() {
-        return null;
+        List<Loan> loans = loanService.getAllLoans();
+        return new ResponseEntity<>(loans, HttpStatus.OK);
     }
 
-    public ResponseEntity<Loan> getLoanById(Long id) {
-        return null;
+    @GetMapping("/{id}")
+    public ResponseEntity<Loan> getLoanById(@PathVariable Long id) {
+        Loan loan = loanService.getLoanById(id);
+        if (loan != null) {
+            return new ResponseEntity<>(loan, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
-    public ResponseEntity<Loan> createLoan(Loan loan) {
-        return null;
+    @PostMapping
+    public ResponseEntity<Loan> createLoan(@RequestBody Loan loan) {
+        Loan createdLoan = loanService.createLoan(loan);
+        return new ResponseEntity<>(createdLoan, HttpStatus.CREATED);
     }
 
-    public ResponseEntity<Void> updateLoan(Long id, Loan loan) {
-        return null;
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateLoan(@PathVariable Long id, @RequestBody Loan loan) {
+        Loan existingLoan = loanService.getLoanById(id);
+        if (existingLoan != null) {
+            loan.setId(id);
+            loanService.updateLoan(loan);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
-    public ResponseEntity<Void> deleteLoan(Long id) {
-        return null;
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteLoan(@PathVariable Long id) {
+        Loan existingLoan = loanService.getLoanById(id);
+        if (existingLoan != null) {
+            loanService.deleteLoan(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

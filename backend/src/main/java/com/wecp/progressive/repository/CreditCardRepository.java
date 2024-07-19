@@ -1,5 +1,16 @@
+// package com.wecp.progressive.repository;
+
+
+// public interface CreditCardRepository {
+// }
+
 package com.wecp.progressive.repository;
 
 
-public interface CreditCardRepository {
+import com.wecp.progressive.entity.CreditCard;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CreditCardRepository extends JpaRepository<CreditCard, Long> {
 }
