@@ -24,9 +24,9 @@ public class CustomerController {
         return new ResponseEntity<>(customerService.getAllCustomers(), HttpStatus.OK);
     }
 
-    @GetMapping("/{customerId}")
-    public ResponseEntity<Customers> getCustomerById(@PathVariable int customerId) throws SQLException {
-        return new ResponseEntity<>(customerService.getCustomerById(customerId), HttpStatus.OK);
+    @GetMapping("/{customerID}")
+    public ResponseEntity<Customers> getCustomerById(@PathVariable int customerID) throws SQLException {
+        return new ResponseEntity<>(customerService.getCustomerById(customerID), HttpStatus.OK);
     }
 
     @PostMapping
@@ -40,12 +40,12 @@ public class CustomerController {
         
     }
 
-    @DeleteMapping("/{customerId}")
-    public ResponseEntity<Void> deleteCustomer(@PathVariable int customerId) {
+    @DeleteMapping("/{customerID}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable int customerID) {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/{customerId}")
+    @GetMapping("/fromArrayList/{customerId}")
     public ResponseEntity<List<Transactions>> getAllTransactionsByCustomerId(@PathVariable int cutomerId) {
        // return new ResponseEntity<>(getAllTransactionsByCustomerId(cutomerId), HttpStatus.OK);
        return null;
