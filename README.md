@@ -377,7 +377,7 @@ Implement the following files:
 ./src/app/auth/components/logout/logout.component.html
 ./src/app/auth/components/user/user.component.html
  
-MS 3 Day 23:
+## MS 3 Day 23:
 
 Task: Use Angular services and HTTP client to fetch data from the SpringBoot application.
 Create dashboard components that list down customers, accounts, and transactions as html tables.
@@ -404,7 +404,7 @@ src/app/auth/services/auth.service.ts
 ./src/app/auth/auth.module.ts
 ./src/app/auth/bank-routing.module.ts
 
-MS 3 Day 24:
+## MS 3 Day 24:
 
 Task: Create a customer dashboard displaying the following customer-related info:
 
@@ -417,7 +417,7 @@ Complete the implementation in the file below:
 src/app/bank/components/dashboard/dashboard.component.ts
 src/app/bank/components/dashboard/dashboard.component.html
 
-MS 3 Day 25:
+## MS 3 Day 25:
 
 Task 1: Create an admin dashboard and add functionality to perform the following tasks:
 Ability to add/update/delete customers.
@@ -437,7 +437,7 @@ src/app/bank/components/customeredit/customeredit.component.html
 src/app/bank/components/customeredit/customeredit.component.css
 
 
-MS 3 Day 26:
+## MS 3 Day 26:
 
 Task: Enhancement in UI design using the Bootstrap. Apply Bootstrap for responsive design and style enhancement.
 
