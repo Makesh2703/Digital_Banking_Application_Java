@@ -12,7 +12,7 @@ Following is a day-wise schedule for building and completing the BankSafe Projec
 Scenario: BankSafe, wants to transition to digital and requires a BackEnd system to manage its accounts and operations.
 MS2 Day 1:
 
-#Task 1: Design the Entity model template for Customers, Accounts, and Transactions and connect with the following database:
+# Task 1: Design the Entity model template for Customers, Accounts, and Transactions and connect with the following database:
 
 CREATE TABLE customers (
 customer_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,7 +39,7 @@ transaction_date TIMESTAMP NOT NULL,
 transaction_type VARCHAR(255) NOT NULL
 );
 
-#Task 2:
+# Task 2:
 You need to complete the implementation of the following classes:
 
 Accounts.java
@@ -51,7 +51,7 @@ Note: Don't hardcode the values in DatabaseConnectionManager.java file. Read it 
 
 Task 3: Build a layered architecture such as Client, Service, DAO, etc. Implement interfaces for DAO, DAO Impl, Service, Service Impl.
 
-##MS2 Day 2:
+## MS2 Day 2:
 
 Task 1: Use Java Collection ArrayList to store sample customer and account data.
 Task 2: Display customer and account data using Comparable and Comparator.
