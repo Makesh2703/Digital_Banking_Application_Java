@@ -6,13 +6,13 @@ The Banking industry is seeing a paradigm shift towards digitalization, aiming t
 
 The management of BankSafe recognizes the importance of modernizing its banking operations. The bank's vision is to create an integrated digital platform that can facilitate various banking activities such as account management, transactions, loans, credit card management, and more, while maintaining a high standard of security and user-friendliness.
 The goal of this progressive project is to build a comprehensive online banking system for BankSafe with features that cater to both regular customers and administrative staff.
-*NOTE: Please refrain from submitting the project during the ongoing project development phase. The submission should only be completed after all tasks have been successfully accomplished, and this should take place on MS3 Day 26.*
+## NOTE: Please refrain from submitting the project during the ongoing project development phase. The submission should only be completed after all tasks have been successfully accomplished, and this should take place on MS3 Day 26.*
 
 Following is a day-wise schedule for building and completing the BankSafe Project
 Scenario: BankSafe, wants to transition to digital and requires a BackEnd system to manage its accounts and operations.
-MS2 Day 1:
+## MS2 Day 1:
 
-# Task 1: Design the Entity model template for Customers, Accounts, and Transactions and connect with the following database:
+## Task 1: Design the Entity model template for Customers, Accounts, and Transactions and connect with the following database:
 
 CREATE TABLE customers (
 customer_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,7 +39,7 @@ transaction_date TIMESTAMP NOT NULL,
 transaction_type VARCHAR(255) NOT NULL
 );
 
-# Task 2:
+## Task 2:
 You need to complete the implementation of the following classes:
 
 Accounts.java
@@ -49,7 +49,7 @@ DatabaseConnectionManager.java
 
 Note: Don't hardcode the values in DatabaseConnectionManager.java file. Read it dynamically from application.properties file
 
-Task 3: Build a layered architecture such as Client, Service, DAO, etc. Implement interfaces for DAO, DAO Impl, Service, Service Impl.
+## Task 3: Build a layered architecture such as Client, Service, DAO, etc. Implement interfaces for DAO, DAO Impl, Service, Service Impl.
 
 ## MS2 Day 2:
 
@@ -57,7 +57,7 @@ Task 1: Use Java Collection ArrayList to store sample customer and account data.
 Task 2: Display customer and account data using Comparable and Comparator.
 You need to implement Comparable and Comparator in Account.java and Customer.java
 
-##MS2 Day 3:
+## MS2 Day 3:
 Task 1: pply exception handling using try-catch-finally and throw/throws. Start JDBC integration for persistent data storage.
 Task 2: Develop the DAO layer for interaction with the database.
 
@@ -69,11 +69,11 @@ TransactionDAOImpl.java
 
 Scenario: BankSafe wants to introduce loans and credit card functionalities and requires a web portal for customer interactions.
 
-##MS2 Day 4:
+## MS2 Day 4:
 
 Task: Set up a SpringBoot project. Test with the "Welcome to BankSafe Online!" message.
 
-MS2 Day 5:
+## MS2 Day 5:
 
 Task: Construct Controller and Service layers. Store Customer and Account data in an ArrayList.
 
@@ -95,14 +95,14 @@ getAllCustomersSortedByNameFromArrayList - GET /customers/fromArrayList/{custome
 2: CustomerServiceJpaImpl.java
 3: AccountServiceImplJpa.java
 
-MS2 Day 6:
+## MS2 Day 6:
 Task: Replace ArrayList data storage with a MySQL database. Use Spring Boot JPA for CRUD operations.
 
 Complete the CustomerController.java Controller for CRUD Operations.
 You need to complete the CustomerServiceJpaImpl.java
 CustomerController.java
  
-MS2 Day 7:
+## MS2 Day 7:
 
 Task: Shift CRUD operations to SpringDataJPA.
 You need to update the Entities (Customer, Account, and Transactions) to have associations and update the repository package for each Entity.
@@ -118,7 +118,7 @@ Accounts and Transactions Entity should be updated (during Spring Data JPA inclu
 Every Transaction (Credit/Debit) should be accounted with the corresponding Account, and the Balance should be adjusted accordingly.
  
 
-MS2 Day 8:
+## MS2 Day 8:
 
 Task: Shift CRUD operations to SpringDataJPA.
 
@@ -142,7 +142,7 @@ updateTransaction - PUT /transactions/{transactionId}
 deleteTransaction - DELETE /transactions/{transactionId}
 getAllTransactionsByCustomerId - GET /transactions/customer{customerId}
 
-MS2 Day 9:
+## MS2 Day 9:
 
 Task: Add the following custom exceptions to Service layer:
 
@@ -164,7 +164,7 @@ AccountServiceJpaImpl
 CustomerServiceJpaImpl.java.
 TransactionServiceJpaImpl
  
-MS2 Day 10:
+## MS2 Day 10:
 Task: Implement CRUD for Loan using SpringDataJPA. Incorporate exception handling.
 
 You need to complete the implementation of the following classes, ensuring adherence to the specified API endpoints as listed below :
@@ -178,7 +178,7 @@ updateLoan - PUT /loans/{id}
 deleteLoan - DELETE /loans/{id}
  
 
-MS2 Day 11:
+## MS2 Day 11:
 
 Task: Implement CRUD CreditCard entities using SpringDataJPA. Incorporate exception handling.
 
@@ -192,7 +192,7 @@ createCreditCard - POST /credit-cards
 updateCreditCard - PUT /credit-cards/{id}
 deleteCreditCard - DELETE /credit-cards/{id}
  
-MS2 Day 12:
+## MS2 Day 12:
 
 Scenario: For enhanced security and user experience, BankSafe wants registration/logins and wants to secure its APIs.
 
@@ -209,7 +209,7 @@ You need to implement the following classes:
 JwtUtil
 JwtRequestFilter
 
-MS3 Day 13:
+## MS3 Day 13:
 Task 1: Implement User Registration and Login functionalities
 You need to implement the following classes, ensuring adherence to the specified API endpoints as listed below :
 
@@ -238,7 +238,7 @@ Ability to get details of all transactions of any customer with their customer I
 Ability to delete an account or customer.
 Ability to update customer id.
 
-MS3 Day 14 and Day 15:
+## MS3 Day 14 and Day 15:
 Scenario: BankSafe wants a modern FrontEnd and a mobile-friendly interface for its digital banking platform.
 Task: Apply Frontend validation for registration and login pages using JavaScript.
 
@@ -256,7 +256,7 @@ Implement the following files:
 
 NOTE to Learners: Create separate JavaScript files to do the above validations.*
 
-MS3 Day 16:
+## MS3 Day 16:
 
 Task: Use TypeScript to design classes for Customers, Accounts, and Transactions. Console the attributes of customer, account, and transaction tables as key-value pairs.
 
@@ -266,7 +266,7 @@ src/app/types/Account.ts
 src/app/types/Customer.ts
 src/app/types/Transaction.ts
 
-MS3 Day 17:
+## MS3 Day 17:
 
 Task: Create Angular components for Customers and Accounts. Bind sample data to customer and account classes.
 
@@ -277,7 +277,7 @@ Implement the following files:
 ./frontend/src/app/bank/components/customersample/customersample.component.ts
 ./frontend/src/app/bank/components/customersample/customersample.component.html
  
-MS3 Day 18:
+## MS3 Day 18:
 
 Task: Implement two-way data binding and event binding for Customers using angular forms.
 
@@ -285,7 +285,7 @@ Implement the following files:
 src/app/bank/components/customer/customer.component.html
 src/app/bank/components/customer/customer.component.ts
 
-MS3 Day 19:
+## MS3 Day 19:
 
 Task: Add customer data using JSON Array. Showcase Customer data using *ngFor and *ngIf directives in Angular.
 
@@ -294,7 +294,7 @@ Implement the following files:
 ./frontend/src/app/bank/components/customerarray/customerarray.component.html
 ./frontend/src/app/bank/components/customerarray/customerarray.component.ts
 
-MS3 Day 20:
+## MS3 Day 20:
 
 Task: Create Angular components for Transactions and Accounts. Implement two-way data binding and event binding in Angular Forms.
 
@@ -306,7 +306,7 @@ src/app/bank/components/account/account.component.html
 src/app/bank/components/account/account.component.ts
  
 
-MS3 Day 21:
+## MS3 Day 21:
 Task 1: Apply Frontend form functionalities and validation for registration and login forms.
 The validation rules should include checks for the following cases:
 
@@ -333,7 +333,7 @@ Implement the following files:
 src/app/bank/components/customer/customer.component.ts
 src/app/bank/components/customer/customer.component.html
 
-MS 3 Day 22
+## MS 3 Day 22
 
 Scenario: For a seamless user journey, BankSafe wants routing, forms, integration with Backend services, and style enhancements.
 Note: Edit the following files to establish ManyToOne relationships between the entities -
