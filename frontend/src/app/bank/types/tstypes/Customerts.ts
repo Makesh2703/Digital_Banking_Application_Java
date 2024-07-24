@@ -1,13 +1,13 @@
 //Customer.ts
 export class CustomerTS {
-    customerId?: string;
+    customerId: string;
     name: string;
     email: string;
     password:string;
     username:string;
-    role?:string;
+    role:string;
    
-      constructor(name: string, email: string, username: string, password: string, role: string, customerId?:string) {
+      constructor(name: string, email: string, username: string, password: string, role: string, customerId:string) {
           this.customerId = customerId;
           this.name = name;
           this.email = email;

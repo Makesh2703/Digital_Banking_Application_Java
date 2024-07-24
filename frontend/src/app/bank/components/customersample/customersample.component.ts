@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Customer } from '../../types/Customer';
+import { CustomerTS } from '../../types/tstypes/Customerts';
 import { of } from 'rxjs';
 
 @Component({
@@ -8,9 +8,14 @@ import { of } from 'rxjs';
   standalone: true,
   imports: [],
   templateUrl: './customersample.component.html',
-  styleUrl: './customersample.component.css'
+  styleUrls: ['./customersample.component.css']
 })
 export class CustomersampleComponent {
+  customer : CustomerTS;
  
+  constructor(){
+    this.customer= new CustomerTS( "John Doe", "john@example.com", "john_doe", "password123", "User","1");
+   
+  }
 }
 

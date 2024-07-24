@@ -4,7 +4,7 @@ export class AccountTS {
     accountId?: string;
     customerId: string;
     balance: number;
-    constructor( customerId: string, balance: number,accountId?:string,) {
+    constructor( customerId: string, balance: number,accountId?:string) {
         this.accountId = accountId;
         this.customerId = customerId;
         this.balance = balance;
