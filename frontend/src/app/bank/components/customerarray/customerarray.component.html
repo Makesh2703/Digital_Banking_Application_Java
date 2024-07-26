@@ -1,0 +1,15 @@
+<div *ngFor ="let customer of customers">
+    <p>{{customer.customerId}}
+        {{customer.name}}
+            {{customer.email}}
+                {{customer.username}}
+                    {{customer.password}}
+                        {{customer.role}}</p>
+</div>
+
+<!-- <div *ngFor="let customer of customers">
+    <span class="badge">{{ customer.id }}</span>
+    {{ customer.name }} ({{ customer.isActive ? 'Active' : 'Inactive' }})
+  </div>
+   -->
+
