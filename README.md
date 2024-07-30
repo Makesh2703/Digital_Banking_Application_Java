@@ -6,7 +6,7 @@ The Banking industry is seeing a paradigm shift towards digitalization, aiming t
 
 The management of BankSafe recognizes the importance of modernizing its banking operations. The bank's vision is to create an integrated digital platform that can facilitate various banking activities such as account management, transactions, loans, credit card management, and more, while maintaining a high standard of security and user-friendliness.
 The goal of this progressive project is to build a comprehensive online banking system for BankSafe with features that cater to both regular customers and administrative staff.
-## NOTE: Please refrain from submitting the project during the ongoing project development phase. The submission should only be completed after all tasks have been successfully accomplished, and this should take place on MS3 Day 26.*
+### NOTE: Please refrain from submitting the project during the ongoing project development phase. The submission should only be completed after all tasks have been successfully accomplished, and this should take place on MS3 Day 26.*
 
 Following is a day-wise schedule for building and completing the BankSafe Project
 Scenario: BankSafe, wants to transition to digital and requires a BackEnd system to manage its accounts and operations.
