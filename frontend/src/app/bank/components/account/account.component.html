@@ -1,0 +1,11 @@
+<div>
+    <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+      <label for="customer_id">Customer ID:</label>
+      <input type="text" id="customer_id" formControlName="customer_id" />
+  
+      <label for="balance">Balance:</label>
+      <input type="text" id="balance" formControlName="balance" />
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>
