@@ -1,21 +1,13 @@
-//import { Customer } from "./Customer";
-//Accountts.ts
-export class AccountTS {
-    accountId?: string;
-    customerId: string;
-    balance: number;
-    constructor( customerId: string, balance: number,accountId?:string) {
-        this.accountId = accountId;
-        this.customerId = customerId;
-        this.balance = balance;
-    }
-
-    displayInfo() {
-        console.log(`Account ID: ${this.accountId}`);
-        console.log(`Customer ID: ${this.customerId}`);
-        console.log(`Balance: ${this.balance.toFixed(2)}`);
-    }
+import { Customer } from "./Customer";
+export class Account {
+ accountId?: number;
+ customer: Customer;
+ balance: number;
+ 
+  constructor(data: any) {
+    // if(this.accountId)
+    this.accountId = data?.accountId;
+    this.customer = data?.customer;
+    this.balance = data?.balance !== undefined ? data.balance : 0;
 }
-
-const account = new AccountTS("1",1000.00,"1");
-account.displayInfo();
+}

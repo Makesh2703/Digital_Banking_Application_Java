@@ -1,9 +1,3 @@
-// package com.wecp.progressive.repository;
-
-
-// public interface CreditCardRepository {
-// }
-
 package com.wecp.progressive.repository;
 
 

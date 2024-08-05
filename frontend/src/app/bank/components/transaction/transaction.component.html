@@ -1,22 +1,47 @@
-<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
-    
-    <div class="form-group">
-      <label for="transaction_id">Account ID:</label>
-      <input type="number" id="accountId" formControlName="accountId" />
+
+<app-navbar></app-navbar>
+
+<h2 style="text-align: center">Make a Transaction</h2>
+<form
+  (ngSubmit)="onSubmit()"
+  [formGroup]="transactionForm"
+  class="transaction-form"
+>
+  <div class="form-group">
+    <label for="userId">Account:</label>
+    <select formControlName="accounts">
+      <option value="">Select Account</option>
+      <option
+        *ngFor="let account of accounts$ | async"
+        [ngValue]="account"
+      >
+        {{ account.accountId }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" formControlName="amount" />
+
+  </div>
+  <div class="form-group">
+    <label for="transaction_type">Transaction Type:</label>
+    <input type="radio" id="transaction_type" formControlName="transactionType" value="1" /> Credit
+    <input type="radio" id="transaction_type" formControlName="transactionType" value="2"/> Debit
+  </div>
+  <!-- <input type="hidden" [value]="new Date()"/> -->
+
+  <button type="submit" class="btn-submit">Submit</button>
+  <ng-container>
+    <div *ngIf="transactionError$ | async as error" class="error">
+      {{ error }}
     </div>
-    <div class="form-group">
-      <label for="transaction_id">Transaction Type:</label>
-      <input type="number" id="transactionType" formControlName="transactionType" />
+    <div *ngIf="transactionSuccess$ | async as msg" class="success">
+      {{ msg }}
     </div>
-    <div class="form-group">
-      <label for="transaction_id">Transaction Amount:</label>
-      <input type="number" id="amount" formControlName="amount" />
-    </div>
-    <div class="form-group">
-      <label for="transactionDate">Transaction Date:</label>
-      <input type="number" id="transactionDate" formControlName="transactionDate" />
-    </div>
-  
-    <button type="submit" [disabled]="!transactionForm.valid">Submit</button>
-  </form>
+  </ng-container>
+  <a routerLink="/bank" class="task-list" class="task-list">Dashboard</a>
+
+</form>
+
 

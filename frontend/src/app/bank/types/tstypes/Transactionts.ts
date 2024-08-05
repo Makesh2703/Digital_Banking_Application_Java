@@ -1,24 +1,18 @@
-
-//import { Account } from './Account';
-
-// export class Transaction {
-  
-// }
-export class TransactionTS {
-    transactionId?: number;
+export class TransactionTS{
+    transactionId?:number;
     accountId: string;
-  amount: number;
-  transactionDate: Date;
-   transactionType:string;
+    amount: number;
+    transactionDate: Date;
+    transactionType: string;
 
-    constructor(accountId: string, amount: number, transactionDate: Date, transactionId?:number) {
+    constructor(accountId: string, amount: number, transactionDate: Date, transactionId?:number){
         this.transactionId = transactionId;
-        this.accountId = accountId;
+        this.accountId=accountId;
         this.amount = amount;
         this.transactionDate = transactionDate;
     }
 
-    displayInfo() {
+    displayInfo(){
         console.log(`Transaction ID: ${this.transactionId}`);
         console.log(`Account ID: ${this.accountId}`);
         console.log(`Amount: ${this.amount.toFixed(2)}`);
@@ -27,5 +21,5 @@ export class TransactionTS {
     }
 }
 
-const transaction = new TransactionTS("1", 50.00, new Date(),1);
+const transaction = new TransactionTS("1",50.00,new Date(),1);
 transaction.displayInfo();

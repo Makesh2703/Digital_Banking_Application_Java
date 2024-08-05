@@ -1,11 +1,38 @@
-<div>
-    <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
-      <label for="customer_id">Customer ID:</label>
-      <input type="text" id="customer_id" formControlName="customer_id" />
-  
-      <label for="balance">Balance:</label>
-      <input type="text" id="balance" formControlName="balance" />
-  
-      <button type="submit">Submit</button>
-    </form>
+<app-navbar></app-navbar>
+ 
+ 
+<form (ngSubmit)="onSubmit()" [formGroup]="accountForm" class="user-form">
+  <div class="form-group">
+    <label for="userId">Customer:</label>
+    <select formControlName="customer">
+        <option value="">Select a Customer</option>
+        <option *ngFor="let customer of customers$ | async" [ngValue]="customer">
+          {{ customer.name }}
+        </option>
+    </select>
   </div>
+ 
+  <div class="form-group">
+    <label for="balance">Balance:</label>
+    <input
+      type="text"
+      id="balance"
+      formControlName="balance"
+      class="form-control"
+    />
+  </div>
+ 
+  <button type="submit" class="btn-submit">Create Account</button>
+ 
+  <ng-container>
+    <div *ngIf="accountError$ | async as error" class="error">
+      {{ error }}
+    </div>
+    <div *ngIf="accountSuccess$ | async as msg" class="success">
+      {{ msg }}
+    </div>
+  </ng-container>
+ 
+  <a routerLink="/bank" class="task-list" class="task-list">Dashboard</a>
+</form>
+ 
