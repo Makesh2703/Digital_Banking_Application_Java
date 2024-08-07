@@ -3,12 +3,9 @@ import { environment } from "src/environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { Transaction } from "../types/Transaction";
 import { Account } from "../types/Account";
-
-//import { Transaction } from "../types/Transaction";
 import { Observable } from "rxjs";
 import { Customer } from "../types/Customer";
-//import { Account } from "../types/Account";
-// import { transition } from "@angular/animations";
+
 
 @Injectable({
   providedIn: "root",

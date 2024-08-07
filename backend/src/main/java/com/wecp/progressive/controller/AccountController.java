@@ -17,10 +17,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
-
-    private final AccountService accountService;
-
     @Autowired
+    private final AccountService accountService;
+    
     public AccountController(@Qualifier("accountServiceImplJpa") AccountService accountService) {
         this.accountService = accountService;
     }

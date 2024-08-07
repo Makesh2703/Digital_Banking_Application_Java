@@ -23,14 +23,14 @@ import org.springframework.web.server.ResponseStatusException;
 @RestController
 @RequestMapping("/customer")
 public class CustomerLoginController {
-
+    @Autowired
     private final CustomerLoginService customerLoginService;
 
     private final AuthenticationManager authenticationManager;
 
     private final JwtUtil jwtUtil;
 
-    @Autowired
+   
     public CustomerLoginController(CustomerLoginService customerLoginService, JwtUtil jwtUtil, AuthenticationManager authenticationManager ) {
         this.customerLoginService = customerLoginService;
         this.authenticationManager = authenticationManager;

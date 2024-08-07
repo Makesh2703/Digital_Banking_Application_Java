@@ -12,9 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/loans")
 public class LoanController {
-    private final LoanService loanService;
-
     @Autowired
+    private final LoanService loanService;
+   
     public LoanController(LoanService loanService) {
         this.loanService = loanService;
     }

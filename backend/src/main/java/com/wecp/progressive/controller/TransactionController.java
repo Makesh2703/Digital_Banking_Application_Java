@@ -17,10 +17,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/transactions")
 public class TransactionController {
-
-    private final TransactionService transactionService;
-
     @Autowired
+    private final TransactionService transactionService;
+    
     public TransactionController(@Qualifier("transactionServiceImplJpa") TransactionService transactionService) {
         this.transactionService = transactionService;
     }

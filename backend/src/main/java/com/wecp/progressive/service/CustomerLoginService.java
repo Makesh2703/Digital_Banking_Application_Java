@@ -15,12 +15,12 @@ import java.util.Optional;
 
 @Service
 public class CustomerLoginService implements UserDetailsService {
-
+    @Autowired
     private final CustomerRepository customerRepository;
 
     private final PasswordEncoder passwordEncoder;
 
-    @Autowired
+   
     public CustomerLoginService(CustomerRepository customerRepository, PasswordEncoder passwordEncoder) {
         this.customerRepository = customerRepository;
         this.passwordEncoder = passwordEncoder;

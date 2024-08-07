@@ -15,10 +15,10 @@ import java.util.List;
 
 @Service
 public class CustomerServiceImplJpa implements CustomerService {
-
+    @Autowired
     private final CustomerRepository customerRepository;
 
-    @Autowired
+    
     public CustomerServiceImplJpa(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
